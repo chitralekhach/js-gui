@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title> Travelers Estimator</title>
+  <title> Capacity Estimator</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -15,28 +15,16 @@
 <body>
   <main class="container-fluid">
 
-    <h1>Given length, width, and height, calculate volume of material (l*w*h)</h1>
+    <h1>Given number of students, and a constant 2 people on staff, return people per course (students + 2)</h1>
     <h3>Right-click / Inspect, then select console</h3>
 
-    <p>Enter your name:
-      <input id="guest" type="text" value="Chitralekha">
+     <p>Enter first number:
+      <input id="students" type="number" value="5">
     </p>
 
-    <p>Enter first number:
-      <input id="firstNumber" type="length" value="12">
-    </p>
+     <button id="clicker" class="btn btn-primary">Click me!</button>
 
-    <p>Enter second number:
-      <input id="secondNumber" type="width" value="6">
-    </p>
-    <p>Enter third number:
-      <input id="thirdNumber" type="heigth" value="9">
-    </p>
-
-
-    <button id="clicker" class="btn btn-primary">Click me!</button>
-
-    <p id="result"></p>
+    <p id="result" ></p>
 
   </main>
 
@@ -45,22 +33,15 @@
 
     console.log('Declare testable functions.....................')
 
-    function mul(x, y,z) {
-      return x *y*z
+    function add(x,y) {
+      return x+y
     }
-    console.log('Defined mul=' + mul)
-
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const guest = document.getElementById('guest').value
-      const i = parseInt(document.getElementById('firstNumber').value)
+      const i = (document.getElementById('students').value)
       console.log('i=' + i)
-      const j = parseInt(document.getElementById('secondNumber').value)
-      console.log('j=' + j)
-      const k = parseInt(document.getElementById('thirdNumber').value)
-      console.log('k=' + k)
-      const ans = guest + ', your volume is ' + mul(i, j,k) + '.'
+      const ans = 'people per course is ' + (i+2)  + '.'
       document.getElementById('result').innerHTML = ans
     })
 
