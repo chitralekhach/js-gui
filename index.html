@@ -24,7 +24,7 @@
 
      <button id="clicker" class="btn btn-primary">Click me!</button>
 
-    <p id="result" ></p>
+    <p id="result"> </p>
 
   </main>
 
@@ -39,7 +39,7 @@
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const i = (document.getElementById('students').value)
+      const i = parseInt(document.getElementById('students').value)
       console.log('i=' + i)
       const ans = 'people per course is ' + (i+2)  + '.'
       document.getElementById('result').innerHTML = ans
